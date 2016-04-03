@@ -26,7 +26,27 @@ Javascript Date Picker (BE) will continue to be offered under the same terms as 
 https://en.wikipedia.org/wiki/MIT_License
 
 
+    Open Iconic Font
+    ----------------
+
+A reduced subset of the open source Open Iconic icon font is now included in the package so that the example can show a calendar icon.
+
+The original font is available from:
+
+https://github.com/iconic/open-iconic
+
+The subset font is offered under the same SIL licence as the original.
+
+Note that the subset and the original fonts are incompatible, glyph positions in the font table are different.
+
+
 CHANGELOG
+
+Version 1.1.0 - 3 April 2016
+
+* Modernised interface; all base64-encoded images removed and replaced with CSS code.
+* Calendar icon now constructed with a <span> tag and CSS.
+* Subset of Open Iconic font included.
 
 Version 1.0.0 - 30 March 2016
 

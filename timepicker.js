@@ -9,7 +9,7 @@ function isInteger(s) {
 
 // Make the time into a nice format as they type eg HHMM goes to HH:MM
 function timePickerKeyup(e) {
-  var targ; // Crossbrowser way to find the target (http://www.quirksmode.org/js/events_properties.html)
+  var targ; // Crossbrowser way to find the target
   if (!e) var e = window.event;
   if (e.target) targ = e.target;
   else if (e.srcElement) targ = e.srcElement;
@@ -22,7 +22,7 @@ function timePickerKeyup(e) {
 
 // Gets called if they tab out of a time picker, to neaten it up
 function timePickerBlur(e) {
-  var targ; // Crossbrowser way to find the target (http://www.quirksmode.org/js/events_properties.html)
+  var targ; // Crossbrowser way to find the target
   if (!e) var e = window.event;
   if (e.target) targ = e.target;
   else if (e.srcElement) targ = e.srcElement;

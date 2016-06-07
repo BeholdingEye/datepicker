@@ -1,104 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
- 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-<head> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-<title>Date Picker Example</title> 
-
-<link rel="stylesheet" type="text/css" href="datepicker.css" /> 
-<script type="text/javascript" src="datepicker.js"></script> 
-<script type="text/javascript" src="timepicker.js"></script> 
-
-<style>
-  body {
-      display: block;
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      vertical-align: top;
-      font-family: Verdana,sans-serif;
-      font-size: 16px;
-      background-color: silver;
-  }
-  div.user_content {
-      display: inline-block;
-      position: relative;
-      margin: 0;
-      padding: 1em;
-      width: 60%;
-      height: 100%;
-      min-width: 800px;
-      max-width: 1000px;
-      text-align: center;
-      background-color: white;
-  }
-  div.codeblock {
-      display: inline-block;
-      position: relative;
-      margin: 1em;
-      padding: 1em;
-      width: 680px;
-      font-size: 0.9em;
-      border: solid thin silver;
-      border-radius: 10px;
-      background-color: #F0F0F0;
-  }
-  h1,h2,h3,h4,h5,h6,p,input,pre,ul,li {
-      text-align: left;
-  }
-  input {
-    font-family:monospace;
-  }
-</style>
-</head> 
-<body> 
-  <div class="user_content">
-
-  <h1>Date Picker Example</h1> 
-  
-  <p>Enter Date / Time:<br /> 
-    <input id="date_input" class="datepicker" size='14' title='D-MMM-YYYY' />
-    <span class="datepickershow" onclick="return showDatePicker('date_input')"> </span>
-    <input id="start_tm" class='timepicker' size='6'  title='HH:MM' /> 
-  </p>
- 
-  <h2>How to use these pickers in your app:</h2>
-  
-  <p>Put the following 2 or 3 lines in your page's &lt;head&gt; section:</p>
-  
-<div class="codeblock">
-  <pre>&lt;link rel="stylesheet" type="text/css" href="datepicker.css" /&gt; 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Date Picker Example</title>
+    <link rel="stylesheet" type="text/css" href="datepicker.css">
+    <script type="text/javascript" src="datepicker.js"></script>
+    <script type="text/javascript" src="timepicker.js"></script>
+    <style>
+      body {
+          display: block;
+          position: absolute;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          vertical-align: top;
+          font-family: Verdana,sans-serif;
+          font-size: 16px;
+          background-color: silver;
+      }
+      div.user_content {
+          display: inline-block;
+          position: relative;
+          margin: 0;
+          padding: 1em;
+          width: 60%;
+          height: 100%;
+          min-width: 800px;
+          max-width: 1000px;
+          text-align: center;
+          background-color: white;
+      }
+      div.codeblock {
+          display: inline-block;
+          position: relative;
+          margin: 1em;
+          padding: 1em;
+          width: 680px;
+          font-size: 0.9em;
+          border: solid thin silver;
+          border-radius: 10px;
+          background-color: #F0F0F0;
+      }
+      h1,h2,h3,h4,h5,h6,p,input,pre,ul,li {
+          text-align: left;
+      }
+      input {
+        font-family:monospace;
+      }
+    </style>
+  </head> 
+  <body> 
+    <div class="user_content">
+      <h1>Date Picker Example</h1> 
+      <p>Enter Date / Time:<br> 
+        <input id="date_input" class="datepicker" size='14' title='D-MMM-YYYY'>
+        <span class="datepickershow" onclick="return showDatePicker('date_input')"></span>
+        <input id="start_tm" class='timepicker' size='6'  title='HH:MM'> 
+      </p>
+      <h2>How to use these pickers in your app:</h2>
+      <p>Put the following 2 or 3 lines in your page's &lt;head&gt; section:</p>
+      <div class="codeblock">
+        <pre>&lt;link rel="stylesheet" type="text/css" href="datepicker.css"&gt; 
 &lt;script type="text/javascript" src="datepicker.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="timepicker.js"&gt;&lt;/script&gt;</pre>
-</div>
-
-  <p>On any &lt;input&gt; that you want to have a date picker for:</p>
-  
-  <ul>
-    <li>set/add the 'datepicker' class</li>
-    <li>set an id that will match the id in the onclick function call that follows</li>
-    <li>add a &lt;span&gt; tag with the class of "datepickershow" and an onclick attribute to call showDatePicker() with the id of the input</li>
-  </ul>
-
-<div class="codeblock">
-  <pre>&lt;input id="date_input" class="datepicker" size='11' title='D-MMM-YYYY'&gt;
-&lt;span class="datepickershow" onclick="return showDatePicker('date_input')"&gt; &lt;/span&gt;</pre>
-</div>
-
-  <p>Use the &lt;span&gt; tag to create the calendar icon, best done with an icon font and CSS techniques. A subset of Open Iconic font is included with the package and used in this example.</p>
-
-  <p>On any &lt;input&gt; that you want to have a time picker for, set/add the 'timepicker' class:</p>
-  
-<div class="codeblock">
-  <pre>&lt;input id='start_dt' class='timepicker'&gt;
+      </div>
+      <p>On any &lt;input&gt; that you want to have a date picker for:</p>
+      <ul>
+        <li>set/add the 'datepicker' class</li>
+        <li>set an id that will match the id in the onclick function call that follows</li>
+        <li>add a &lt;span&gt; tag with the class of "datepickershow" and an onclick attribute to call showDatePicker() with the id of the input</li>
+      </ul>
+      <div class="codeblock">
+        <pre>&lt;input id="date_input" class="datepicker" size='11' title='D-MMM-YYYY'&gt;
+&lt;span class="datepickershow" onclick="return showDatePicker('date_input')"&gt;&lt;/span&gt;</pre>
+      </div>
+      <p>Use the &lt;span&gt; tag to create the calendar icon, best done with an icon font and CSS techniques. A subset of Open Iconic font is included with the package and used in this example.</p>
+      <p>On any &lt;input&gt; that you want to have a time picker for, set/add the 'timepicker' class:</p>
+      <div class="codeblock">
+        <pre>&lt;input id='start_dt' class='timepicker'&gt;
 &lt;input id='another_dt' class='myclass timepicker'&gt;</pre>
-</div>
-
-  <p>Enjoy!</p>
-
-</div>
-</body> 
+      </div>
+      <p>Enjoy!</p>
+    </div>
+  </body> 
 </html> 

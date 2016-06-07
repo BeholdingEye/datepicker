@@ -7,6 +7,10 @@
     src: url("open-iconic-small.woff") format("woff");
 }
 
+input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
                                                             /* Datepicker panel */
 .datepickerdropdown {
     position:absolute;
@@ -27,6 +31,7 @@
     margin: 0;
     padding: 0;
 }
+                                                                /* Month surfing buttons */
 .datepickerdropdown tr:first-child input[type=button] {
     background-color: silver;
     background-image: linear-gradient(#EEE, #CCC);
@@ -35,6 +40,11 @@
     background-color: #CCC;
     background-image: linear-gradient(#F0F0F0, #E0E0E0);
 }
+.datepickerdropdown tr:first-child input[type=button]:disabled {
+    background: initial;
+    background-color: #EEE;
+    cursor: initial;
+}
 .datepickerdropdown input {
     margin:2px;
     padding:0;
@@ -42,7 +52,7 @@
     text-align:center;
     cursor: pointer;
     border: none;
-    outline: none;
+    outline: 0;
     border-radius:3px;
 }
 .datepickerdropdown table input[type=button] {
@@ -50,30 +60,69 @@
     height: 25px;
 }
 .datepickerdropdown input[type=button] {
+    background-color: #EEE;
 }
 .datepickerdropdown input[type=button]:hover {
-    background-color: skyblue;
+    background-color: #CEF;
 }
 .datepickerdropdown input[type=button]:active {
     padding:2px 4px 2px 6px;
-}      
+}   
 .datepickerdropdown input.selected {
-    background-color: #AFA;
+    font-weight: bold;
+    color: white;
+    border: solid 1px navy;
+    background-color: #59F;
+}
+.datepickerdropdown input.selected:hover {
+    cursor: initial;
+    background-color: #59F;
+}
+.datepickerdropdown input.selected:active {
+    padding: 0;
 }
 .datepickerdropdown input[type=text] {
     color: #333;
     background: transparent;
 }
+                                            /* Today may need to be styled if past months are shown */
 .datepickerdropdown input.today {
-    border:1px solid red;
 }
+
 .datepickerdropdown input.othermonth {
     color:#aaa;
     border:1px solid #bbb;
 }
+.datepickerdropdown input.notavailable {
+    color: white;
+    background-color: red;
+}
+.datepickerdropdown input.notavailable:hover {
+    background-color: red;
+    cursor: initial;
+}
+.datepickerdropdown input.notavailable:active {
+    padding: 0;
+}
+.datepickerdropdown input.pastdate {
+    background-color: white;
+    color: silver;
+    border: none;
+}
+.datepickerdropdown input.pastdate:hover {
+    background-color: white;
+    cursor: initial;
+}
+.datepickerdropdown input.pastdate:active {
+    padding: 0;
+}
 .monthDsp {
     width:105px;
     font-size:12px;
+    cursor: initial;
+}
+.monthDsp:hover {
+    cursor: initial;
 }
 .daysRow {
     font-family:sans-serif;
